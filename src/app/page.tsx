@@ -21,7 +21,9 @@ export default function Home() {
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
             <ul className="flex-0 object-cover h-12 w-24 ">
-              <Image src={thisIsFine} />
+              <Image
+                src={thisIsFine}
+                alt="This is fine"/>
             </ul>
             <ul className="flex items-center">
               <li>
