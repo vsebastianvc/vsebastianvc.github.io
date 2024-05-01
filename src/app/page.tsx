@@ -1,12 +1,5 @@
 "use client";
 import thisIsFine from "../../public/thisisfine.svg";
-import vsebastianvc from "../../public/vsebastianvc.png";
-import wsl from "../../public/wsl.svg";
-import polestar from "../../public/polestar.svg";
-import bell from "../../public/bell.svg";
-import accuweather from "../../public/accuweather.svg";
-import sevenEleven from "../../public/sevenEleven.svg";
-import calendar from "../../public/calendar.svg";
 import Image from "next/image";
 import {
   AiFillLinkedin,
@@ -15,11 +8,12 @@ import {
 } from "react-icons/ai";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { useState } from "react";
+import CompanyLogo from "@/components/CompanyLogo";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={darkMode ? "dark h-screen" : "h-screen"}>
       <main className="dark:bg-black px-2 sm:px-5 md:px-10 lg:px-20 xl:px-30 2xl:px-40 bg-white">
         <section className="">
           <nav className="pt-10 mb-6 flex justify-between">
@@ -93,73 +87,233 @@ export default function Home() {
           </div>
           <div className="mx-auto rounded-2xl w-60 h-60 relative overflow-hidden">
             <Image
-              src={vsebastianvc}
-              alt="vsebastianvc"
+              src={"/vsebastianvc.png"}
+              alt="Picture of Sebastian Valencia"
               layout="responsive"
               objectFit="cover"
+              width={50}
+              height={50}
             />
           </div>
         </section>
 
         <section className="mb-5">
-          <h3 className="text-center text-xl mt-10 mb-6 dark:text-teal-300 text-black font-medium md:text-5xl ">
-            CLIENTS I HAVE WORKED WITH
+          <h3 className="text-center text-xl mt-10 mb-6 dark:text-white text-black font-medium md:text-4xl tracking-widest">
+            Clients
           </h3>
           <div className="grid grid-cols-5 gap-4 place-items-center justify-center ">
-            <div>
-              <Image
-                className="rounded-l dark:invert"
-                src={wsl}
-                alt="wsl"
-                width={200}
-                height={200}
-              />
-            </div>
-            <div>
-              <Image
-                className="rounded-l dark:invert"
-                src={polestar}
-                alt="polestar"
-                width={200}
-                height={200}
-              />
-            </div>
-            <div>
-              <Image
-                className="rounded-l"
-                src={accuweather}
-                alt="accuweather"
-                width={200}
-                height={200}
-              />
-            </div>
-            <div>
-              <Image
-                className="rounded-l"
-                src={bell}
-                alt="bell"
-                width={200}
-                height={200}
-              />
-            </div>
-            <div>
-              <Image
-                className="rounded-l"
-                src={sevenEleven}
-                alt="sevenEleven"
-                width={200}
-                height={200}
-              />
-            </div>
+            <CompanyLogo
+              image="wsl"
+              alt="World Surf League"
+              customClasses="dark:invert"
+              target="#wsl-experience"
+            />
+            <CompanyLogo
+              image="polestar"
+              alt="Polestar"
+              customClasses="dark:invert"
+              target="#accuweather-experience"
+            />
+            <CompanyLogo
+              image="accuweather"
+              alt="Accuweather"
+              target="#accuweather-experience"
+            />
+            <CompanyLogo image="bell" alt="Bell" target="#bell-experience" />
+            <CompanyLogo
+              image="sevenEleven"
+              alt="Seven Eleven"
+              target="#sevenEleven-experience"
+            />
+            <CompanyLogo
+              image="gopuff"
+              alt="GoPuff"
+              target="#gopuff-experience"
+            />
+            <CompanyLogo
+              image="perksy"
+              alt="Perksy"
+              customClasses="dark:invert"
+              target="#perksy-experience"
+            />
+            <CompanyLogo
+              image="sickKids"
+              alt="Sick Kids"
+              target="#sickkids-experience"
+            />
           </div>
         </section>
 
-        <section className="mb-5 pl-5">
-          <h3 className="text-center text-xl mt-10 mb-6 dark:text-teal-300 text-black font-medium md:text-5xl ">
-            PROJECTS I HAVE WORKED ON
+        <section className="pl-5">
+          <h3 className="text-center text-xl mt-10 mb-10 dark:text-white text-black font-medium md:text-4xl tracking-widest">
+            Experience
           </h3>
 
-          <ol className="relative border-s border-gray-200 dark:border-gray-700 justify-center">
+          {/* <div id="accordion-example">
+            <h2 id="accordion-example-heading-1">
+              <button
+                type="button"
+                className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-expanded="true"
+                aria-controls="accordion-example-body-1"
+              >
+                <span>What is Flowbite?</span>
+                <svg
+                  data-accordion-icon
+                  className="w-6 h-6 rotate-180 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-example-body-1"
+              className="hidden"
+              aria-labelledby="accordion-example-heading-1"
+            >
+              <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  Flowbite is an open-source library of interactive components
+                  built on top of Tailwind CSS including buttons, dropdowns,
+                  modals, navbars, and more.
+                </p>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Check out this guide to learn how to{" "}
+                  <a
+                    href="/docs/getting-started/introduction/"
+                    className="text-blue-600 dark:text-blue-500 hover:underline"
+                  >
+                    get started
+                  </a>{" "}
+                  and start developing websites even faster with components on
+                  top of Tailwind CSS.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-example-heading-2">
+              <button
+                type="button"
+                className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-expanded="false"
+                aria-controls="accordion-example-body-2"
+              >
+                <span>Is there a Figma file available?</span>
+                <svg
+                  data-accordion-icon
+                  className="w-6 h-6 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-example-body-2"
+              className="hidden"
+              aria-labelledby="accordion-example-heading-2"
+            >
+              <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  Flowbite is first conceptualized and designed using the Figma
+                  software so everything you see in the library has a design
+                  equivalent in our Figma file.
+                </p>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Check out the{" "}
+                  <a
+                    href="{{< param homepage >}}/figma/"
+                    className="text-blue-600 dark:text-blue-500 hover:underline"
+                  >
+                    Figma design system
+                  </a>{" "}
+                  based on the utility classes from Tailwind CSS and components
+                  from Flowbite.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-example-heading-3">
+              <button
+                type="button"
+                className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-expanded="false"
+                aria-controls="accordion-example-body-3"
+              >
+                <span>
+                  What are the differences between Flowbite and Tailwind UI?
+                </span>
+                <svg
+                  data-accordion-icon
+                  className="w-6 h-6 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-example-body-3"
+              className="hidden"
+              aria-labelledby="accordion-example-heading-3"
+            >
+              <div className="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  The main difference is that the core components from Flowbite
+                  are open source under the MIT license, whereas Tailwind UI is
+                  a paid product. Another difference is that Flowbite relies on
+                  smaller and standalone components, whereas Tailwind UI offers
+                  sections of pages.
+                </p>
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  However, we actually recommend using both Flowbite, Flowbite
+                  Pro, and even Tailwind UI as there is no technical reason
+                  stopping you from using the best of two worlds.
+                </p>
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  Learn more about these technologies:
+                </p>
+                <ul className="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                  <li>
+                    <a
+                      href="{{< param homepage >}}/pro/"
+                      className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                      Flowbite Pro
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://tailwindui.com/"
+                      rel="nofollow"
+                      className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                      Tailwind UI
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> */}
+
+          <ol className="relative mb-5 border-s border-gray-200 dark:border-gray-700 justify-center pb-10">
             <li className="mb-5 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <svg
@@ -181,7 +335,7 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 June, 2023 - Present
               </time>
-              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
                 IPSUM...
               </p>
             </li>
@@ -203,7 +357,7 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 May, 2023
               </time>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
                 IPSUM...
               </p>
             </li>
@@ -219,13 +373,16 @@ export default function Home() {
                   <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                 </svg>
               </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+              <h3
+                id="wsl-experience"
+                className="mb-1 text-lg font-semibold text-gray-900 dark:text-white"
+              >
                 Engineer Lead | WSL - Tribalscale
               </h3>
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 December, 2022 - April, 2023
               </time>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
                 IPSUM...
               </p>
             </li>
@@ -247,7 +404,7 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 June, 2022 - November, 2022
               </time>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
                 IPSUM...
               </p>
             </li>
@@ -263,14 +420,24 @@ export default function Home() {
                   <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                 </svg>
               </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+              <h3
+                id="accuweather-experience"
+                className="mb-1 text-lg font-semibold text-gray-900 dark:text-white"
+              >
                 Engineer Lead | Accuweather/Polestar - Tribalscale
               </h3>
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 January, 2022 - May, 2022
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                An Android Automotive (AAOS) application that offers a simple,
+                easy-to-use product for users the most up-to-date and accurate
+                weather information in their vehicle.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span>{" "}
+                Kotlin, AppCarLibrary, Jetpack components, Android SDK, Koin,
+                GitHub, Android Studio, Mockito.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -291,8 +458,16 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 October, 2021 - December, 2021
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                GoPuff has built an app available in-market that is effectively
+                a mobile view of a web app. The requirements were to “lift and
+                shift” this client experience from a web app to a React Native
+                implementation.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span>{" "}
+                Native implementation. Technologies Used: JavaScript, Android,
+                IOS, CSS, Shell, GraphQL.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -313,8 +488,17 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 September, 2021 - October, 2021
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                Given that Runn is used by TribalScale to manage allocations for
+                projects, including Internal (non-billable) projects, Client
+                Billable projects run internally, and also for Staff
+                Augmentation run by a client PM. this web application provided
+                more relevant insight for TribalScale in regards to allocation
+                cliffs and overall team balance.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span>{" "}
+                JavaScript, Vue, CSS, HTML, Shell, Google Cloud.L.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -335,8 +519,17 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 July, 2021 - August, 2021
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                The Bell Voice app essentially allows the user to record the
+                movie they were watching for 10 seconds, then this recording
+                would be sent to the backend for identification. Finally, the
+                user was shown the name of the movie that he had previously
+                recorded for 10 seconds with a success rate of almost 100%.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span>{" "}
+                Kotlin, Jetpack components, Java, Android SDK, Koin, GitHub,
+                Android Studio, Charles Proxy, Postman, Retrofit, Glide.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -357,8 +550,18 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 April, 2021 - June, 2021
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                The Bell Widget app already provided a seamless experience to
+                view current news and Bell updates. the main goal here was to
+                update their current Target SDK level to 30 and resolve current
+                issues regarding data collection with the widget. Through this
+                engagement, Bell will be able to continue preloading their
+                widget on upcoming Android 11 devices.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span> Java,
+                Android SDK, GitHub, Android Studio, Charles Proxy, Postman,
+                Glide.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -379,8 +582,18 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 January, 2021 - April, 2021
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                The Perksy app for Android powers real-time research of
+                Millennials and Gen-Zers through a next-generation,
+                do-it-yourself customer insights mobile app. The effectiveness
+                of Perksy’s application comes from the internal rewards-based
+                system, awarding users each time they answer questions, creating
+                endless opportunities for collecting consumer data and insight.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span> Java,
+                Kotlin, Jetpack components, Java, Android SDK, Koin, GitHub,
+                Android Studio, Charles Proxy, Postman, Retrofit.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -401,8 +614,17 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 August, 2019 - January, 2021
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                The 7-Eleven app for Android lets users earn points and get
+                rewards like free drinks and food, pay with contactless
+                checkout, Pay for Fuel at selected 7-Eleven stores and invite
+                friends to get rewarded, among many other features.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span> Java,
+                Java, Kotlin, Android SDK, Dagger 2, GitHub, JIRA, AsyncTask,
+                Android Studio, Charles Proxy, Postman, Zeplin, Slack, Retrofit,
+                Espresso, Junit, MixPanel, Kochava, MacOS.
               </p>
             </li>
             <li className="mb-5 ms-6">
@@ -423,11 +645,20 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 April, 2016 - August, 2018
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                Designed, developed, and supported software applications in
+                Agile-Scrum environments, to automate mass provisioning of
+                parameter changes of voice, messaging, and data services across
+                national mobile-to-mobile telecom platforms.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span> Java,
+                Android Studio, Dagger 2, GitHub, Android Studio, Java 8, Maven,
+                Hibernate, Oracle, RESTful API, Eclipse, Bash, WEKA, R, SQL
+                Developer, Windows, RHEL, Linux.
               </p>
             </li>
-            <li className="ms-6">
+            <li className="mb-5 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <svg
                   className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
@@ -445,11 +676,21 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 June, 2015 - April, 2016
               </time>
+              <p className="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                Crafted enterprise mobile applications from inception on
+                Android. Steered the UI team, overseeing the design of screens
+                across multiple projects. Provided mentorship to junior
+                developers and played a pivotal role in documenting a
+                substantial portion of the framework delivered to a government
+                entity.
+              </p>
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                IPSUM...
+                <span className="font-extrabold">Technologies Used:</span> Java,
+                Android Studio, REST, SQLite, GreenDao, Git / GitHub, Windows,
+                Android SDK, AsyncTask
               </p>
             </li>
-            <li className="mb-5 ms-6">
+            <li className="ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                 <svg
                   className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
@@ -464,6 +705,9 @@ export default function Home() {
                   />
                 </svg>
               </span>
+              <h3 className="pd-5 text-lg font-semibold text-gray-900 dark:text-white">
+                📲 Journey Started
+              </h3>
             </li>
           </ol>
         </section>
